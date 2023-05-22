@@ -3,7 +3,7 @@ import { Button, Form } from "react-bootstrap";
 import Books from "./Books";
 import { v4 as uuid } from "uuid";
 import { useNavigate } from "react-router-dom";
-
+import "../css/global.css";
 const Add = () => {
   const [bookname, setBookName] = useState("");
   const [authorName, setAuthorName] = useState("");
@@ -22,8 +22,8 @@ const Add = () => {
     history("/");
   };
   return (
-    <div>
-      <Form className="d-grid gap-2" style={{ margin: "15rem" }}>
+    <div className="container">
+      <Form className="edit-form">
         <Form.Group controlId="formName">
           <Form.Control
             type="text"
@@ -56,7 +56,11 @@ const Add = () => {
             onChange={(e) => setIsbn(e.target.value)}
           ></Form.Control>
         </Form.Group>
-        <Button onClick={(e) => handleSubmit(e)} type="submit">
+        <Button
+          className="button"
+          onClick={(e) => handleSubmit(e)}
+          type="submit"
+        >
           Submit
         </Button>
       </Form>

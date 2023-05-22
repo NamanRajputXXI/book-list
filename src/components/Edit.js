@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Button, Form } from "react-bootstrap";
 import Books from "./Books";
 import { useNavigate } from "react-router-dom";
+import "../css/global.css";
 const Edit = () => {
   const [bookname, setBookName] = useState("");
   const [authorName, setAuthorName] = useState("");
@@ -13,6 +14,7 @@ const Edit = () => {
   let index = Books.map((e) => {
     return e.id;
   }).indexOf(id);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     let a = Books[index];
@@ -22,6 +24,7 @@ const Edit = () => {
     a.isbn = isbn;
     history("/");
   };
+
   useEffect(() => {
     setBookName(localStorage.getItem("name"));
     setAuthorName(localStorage.getItem("author"));
@@ -29,46 +32,51 @@ const Edit = () => {
     setIsbn(localStorage.getItem("isbn"));
     setId(localStorage.getItem("id"));
   }, []);
+
   return (
-    <div>
-      <Form className="d-grid gap-2" style={{ margin: "15rem" }}>
-        <Form.Group className="mb-3" controlId="formName">
+    <div className="container">
+      <Form className="edit-form">
+        <Form.Group controlId="formName">
           <Form.Control
             type="text"
             placeholder="Enter Book Name"
             value={bookname}
             required
             onChange={(e) => setBookName(e.target.value)}
-          ></Form.Control>
+          />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formAuthor">
+        <Form.Group controlId="formAuthor">
           <Form.Control
             type="text"
             placeholder="Enter Author Name"
             value={authorName}
             required
             onChange={(e) => setAuthorName(e.target.value)}
-          ></Form.Control>
+          />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formYear">
+        <Form.Group controlId="formYear">
           <Form.Control
             type="number"
-            placeholder="Enter Year "
+            placeholder="Enter Year"
             value={year}
             required
             onChange={(e) => setYear(e.target.value)}
-          ></Form.Control>
+          />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formIsbn">
+        <Form.Group controlId="formIsbn">
           <Form.Control
             type="text"
-            placeholder="Enter Isbn"
+            placeholder="Enter ISBN"
             value={isbn}
             required
             onChange={(e) => setIsbn(e.target.value)}
-          ></Form.Control>
+          />
         </Form.Group>
-        <Button onClick={(e) => handleSubmit(e)} type="submit">
+        <Button
+          className="button"
+          onClick={(e) => handleSubmit(e)}
+          type="submit"
+        >
           Update
         </Button>
       </Form>

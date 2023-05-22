@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  padding: 30px;
+}
+
+.book-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.book-table th,
+.book-table td {
+  border: 1px solid #ddd;
+  padding: 5px;
+}
+
+.book-table th {
+  background-color: #f2f2f2;
+}
+
+.edit-button,
+.delete-button,
+.create-button {
+  padding: 8px 16px;
+  margin-right: 8px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.edit-button:hover,
+.delete-button:hover,
+.create-button:hover {
+  background-color: #45a049;
+}
+.edit-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-form .form-group {
+  margin-bottom: 20px;
+}
+
+.edit-form .form-control {
+  padding: 10px;
+}
+
+.update-button {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.update-button:hover {
+  background-color: #45a049;
+}
+.add-button {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.add-button:hover {
+  background-color: #45a049;
+}
+@media (max-width: 650px) {
+  .edit-button,
+  .delete-button,
+  .create-button,
+  .add-button,
+  .update-button {
+    margin: 5px 10px;
+  }
+}
