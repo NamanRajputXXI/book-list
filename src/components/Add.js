@@ -57,7 +57,7 @@ const Add = () => {
           ></Form.Control>
         </Form.Group>
         <Button
-          className="button"
+          className="add-button"
           onClick={(e) => handleSubmit(e)}
           type="submit"
         >

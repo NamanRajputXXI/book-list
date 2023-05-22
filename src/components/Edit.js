@@ -73,7 +73,7 @@ const Edit = () => {
           />
         </Form.Group>
         <Button
-          className="button"
+          className="update-button"
           onClick={(e) => handleSubmit(e)}
           type="submit"
         >
